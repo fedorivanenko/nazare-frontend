@@ -6,8 +6,8 @@
   "packageManager": "pnpm@10.15.1",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
-    "typecheck": "tsc -b --pretty false",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit --pretty false",
     "preview": "vite preview"
   },
   "dependencies": {
