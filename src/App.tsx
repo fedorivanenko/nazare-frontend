@@ -1,7 +1,9 @@
 import { useMemo, useState } from "react";
 import {
+  ActionProvider,
   Renderer,
   StateProvider,
+  ValidationProvider,
   VisibilityProvider,
 } from "@json-render/react";
 import { heroSpec } from "./hero.spec";
@@ -152,7 +154,11 @@ export function App() {
       <section className="preview" aria-label="Live hero preview">
         <StateProvider initialState={{}}>
           <VisibilityProvider>
-            <Renderer spec={spec} registry={registry} />
+            <ActionProvider handlers={{}}>
+              <ValidationProvider customFunctions={{}}>
+                <Renderer spec={spec} registry={registry} />
+              </ValidationProvider>
+            </ActionProvider>
           </VisibilityProvider>
         </StateProvider>
       </section>
