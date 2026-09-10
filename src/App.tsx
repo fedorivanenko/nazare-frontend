@@ -1,5 +1,9 @@
 import { useMemo, useState } from "react";
-import { Renderer } from "@json-render/react";
+import {
+  Renderer,
+  StateProvider,
+  VisibilityProvider,
+} from "@json-render/react";
 import { heroSpec } from "./hero.spec";
 import { registry } from "./registry";
 
@@ -146,7 +150,11 @@ export function App() {
       </aside>
 
       <section className="preview" aria-label="Live hero preview">
-        <Renderer spec={spec} registry={registry} />
+        <StateProvider initialState={{}}>
+          <VisibilityProvider>
+            <Renderer spec={spec} registry={registry} />
+          </VisibilityProvider>
+        </StateProvider>
       </section>
     </main>
   );
