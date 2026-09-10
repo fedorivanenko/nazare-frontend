@@ -11,8 +11,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@json-render/core": "latest",
-    "@json-render/react": "latest",
+    "@json-render/core": "0.20.0",
+    "@json-render/react": "0.20.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "zod": "^4.1.5"
